@@ -40,6 +40,28 @@ or
 * Check [Yocto GBM ES2 Demo](https://github.com/ds-hwang/yocto-gbm_es2_demo)
 * Enjoy building Linux image from the scratch.
 
+# Android
+## Build
+* Clone gbm_es2_demo code in vendor/intel/external
+```
+git clone https://github.com/yugang/gbm_es2_demo.git
+``` 
+* Update minigbm .mk file for minigbm static build
+```
+cp gbm_es2_demo/Android.mk.minigbm hardware/intel/external/minigbm-intel/Android.mk
+```
+* Add a line "gbm_es2_demo" in section PRODUCT_PACKAGES of device/intel/mixins/groups/graphics/mesa/product.mk to build gbm_es2_demo to final image.
+* Build the Android image.
+
+## Run
+```
+adb shell
+su
+stop
+stop vendor.hwcomposer-2-1
+/vendor/bin/gbm_es2_demo
+``` 
+
 # Demo detail
 ## gbm_es2_demo
 * Show how to glue DRM, GBM and EGL

@@ -346,7 +346,7 @@ class EGLDRMGlue::Impl : public DRMModesetter::Client {
       fprintf(stderr, "EGL_KHR_image_base extension not supported\n");
       return false;
     }
-    if (!ExtensionsContain("EGL_EXT_image_dma_buf_import", egl_extensions)) {
+    /* if (!ExtensionsContain("EGL_EXT_image_dma_buf_import", egl_extensions)) {
       fprintf(stderr, "EGL_EXT_image_dma_buf_import extension not supported\n");
       return false;
     }
@@ -355,7 +355,7 @@ class EGLDRMGlue::Impl : public DRMModesetter::Client {
     if (!ExtensionsContain("GL_OES_EGL_image", gl_extensions)) {
       fprintf(stderr, "GL_OES_EGL_image extension not supported\n");
       return false;
-    }
+    }*/
 
     return true;
   }
